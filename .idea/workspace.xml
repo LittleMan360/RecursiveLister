@@ -57,12 +57,28 @@
       <option name="project" value="LOCAL" />
       <updated>1713752615469</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="created the RecursiveLister did small test seems to work commented out code some need to fix errors/warnings still">
+      <created>1713753090761</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713753090761</updated>
+    </task>
+    <task id="LOCAL-00003" summary="followed through warning fixes">
+      <created>1713753150364</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713753150364</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="created gui" />
     <MESSAGE value="created gui no actions yet just visual" />
-    <option name="LAST_COMMIT_MESSAGE" value="created gui no actions yet just visual" />
+    <MESSAGE value="created the RecursiveLister did small test seems to work commented out code some need to fix errors/warnings still" />
+    <MESSAGE value="followed through warning fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="followed through warning fixes" />
   </component>
 </project>

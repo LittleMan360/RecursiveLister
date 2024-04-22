@@ -21,9 +21,12 @@ public class RecursiveLister extends JFrame {
         //  buttons
         JButton startButton = new JButton("Start");
         buttonPanel.add(startButton);
+        JButton clearButton = new JButton("Clear");
+        buttonPanel.add(clearButton);
         JButton quitButton = new JButton("Quit");
         buttonPanel.add(quitButton);
         add(buttonPanel, BorderLayout.SOUTH);
+
 
         // add action listeners
         startButton.addActionListener((ActionEvent e) -> {
@@ -35,6 +38,9 @@ public class RecursiveLister extends JFrame {
                 listFiles(selectedFile);
             }
         });
+
+        // clear button clears the text area
+        clearButton.addActionListener((ActionEvent e) -> textArea.setText(""));
 
         // quit button ends the program
         quitButton.addActionListener((ActionEvent e) -> System.exit(0));
@@ -62,5 +68,4 @@ public class RecursiveLister extends JFrame {
             frame.setVisible(true);
         });
     }
-
 }
