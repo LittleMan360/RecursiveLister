@@ -3,13 +3,21 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 
+//
 public class RecursiveLister extends JFrame {
+    //  buttons
     private JButton startButton = new JButton("Start");
     private JButton quitButton = new JButton("Quit");
+
+    // text area
     private JTextArea textArea = new JTextArea();
+
+    // scroll pane
     private JScrollPane scrollPane = new JScrollPane(textArea);
 
+    // constructor
     public RecursiveLister() {
+        // set layout
         setLayout(new BorderLayout());
         add(new JLabel("Recursive File Lister"), BorderLayout.NORTH);
         add(scrollPane, BorderLayout.CENTER);
@@ -18,6 +26,7 @@ public class RecursiveLister extends JFrame {
         buttonPanel.add(quitButton);
         add(buttonPanel, BorderLayout.SOUTH);
 
+        // add action listeners
         startButton.addActionListener((ActionEvent e) -> {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -28,10 +37,33 @@ public class RecursiveLister extends JFrame {
             }
         });
 
+        // quit button ends the program
         quitButton.addActionListener((ActionEvent e) -> {
             System.exit(0);
         });
     }
 
+    // list files
+    private void listFiles(File file) {
+        textArea.append(file.getPath() + "\n");
+        if (file.isDirectory()) {
+            File[] files = file.listFiles();
+            if (files != null) {
+                for (File f : files) {
+                    listFiles(f);
+                }
+            }
+        }
+    }
+
+    // main method
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            RecursiveLister frame = new RecursiveLister();
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(800, 600);
+            frame.setVisible(true);
+        });
+    }
 
 }
