@@ -5,24 +5,23 @@ import java.io.File;
 
 //
 public class RecursiveLister extends JFrame {
-    //  buttons
-    private JButton startButton = new JButton("Start");
-    private JButton quitButton = new JButton("Quit");
 
     // text area
-    private JTextArea textArea = new JTextArea();
-
-    // scroll pane
-    private JScrollPane scrollPane = new JScrollPane(textArea);
+    private final JTextArea textArea = new JTextArea();
 
     // constructor
     public RecursiveLister() {
         // set layout
         setLayout(new BorderLayout());
         add(new JLabel("Recursive File Lister"), BorderLayout.NORTH);
+        // scroll pane
+        JScrollPane scrollPane = new JScrollPane(textArea);
         add(scrollPane, BorderLayout.CENTER);
         JPanel buttonPanel = new JPanel();
+        //  buttons
+        JButton startButton = new JButton("Start");
         buttonPanel.add(startButton);
+        JButton quitButton = new JButton("Quit");
         buttonPanel.add(quitButton);
         add(buttonPanel, BorderLayout.SOUTH);
 
@@ -38,9 +37,7 @@ public class RecursiveLister extends JFrame {
         });
 
         // quit button ends the program
-        quitButton.addActionListener((ActionEvent e) -> {
-            System.exit(0);
-        });
+        quitButton.addActionListener((ActionEvent e) -> System.exit(0));
     }
 
     // list files
